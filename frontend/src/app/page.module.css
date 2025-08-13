@@ -1,0 +1,415 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: #666;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.navLink:hover {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.navLink.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Main Content Layout */
+.mainContent {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background-color: white;
+  border-right: 1px solid #e9ecef;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.historySection {
+  margin-bottom: 2rem;
+}
+
+.historyTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.clockIcon {
+  font-size: 1.1rem;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.historyItem {
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.historyItem:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.historyItem.activeHistory {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.historyQuery {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.historyMeta {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Main Content Area */
+.content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Search Page */
+.searchPage {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.searchTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.searchForm {
+  width: 100%;
+}
+
+/* Search Bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: border-color 0.2s;
+}
+
+.searchBar:focus-within {
+  border-color: #007bff;
+}
+
+.searchIcon {
+  font-size: 1.2rem;
+  color: #666;
+  margin-right: 0.75rem;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  background: transparent;
+}
+
+.searchInput::placeholder {
+  color: #999;
+}
+
+.searchButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: 0.75rem;
+}
+
+.searchButton:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.searchButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Results Page */
+.resultsPage {
+  max-width: 800px;
+}
+
+.searchBarContainer {
+  margin-bottom: 2rem;
+}
+
+.resultsHeader {
+  margin-bottom: 2rem;
+}
+
+.resultsTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.resultsSubtitle {
+  color: #666;
+  font-size: 1rem;
+}
+
+.loadingMessage {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Article Cards */
+.articleCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid #e9ecef;
+  transition: box-shadow 0.2s;
+}
+
+.articleCard:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.articleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.articleTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.documentIcon {
+  font-size: 1.2rem;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.articleMeta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.source {
+  font-weight: 500;
+  color: #007bff;
+}
+
+.year {
+  color: #666;
+}
+
+.citations {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.articleAbstract {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.articleActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.viewButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.viewButton:hover {
+  background-color: #0056b3;
+  color: white;
+  text-decoration: none;
+}
+
+.summaryButton {
+  background-color: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.summaryButton:hover {
+  background-color: #f8f9fa;
+  border-color: #999;
+}
+
+/* Right Side Icons */
+.rightIcons {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.brainIcon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.brainIcon:hover {
+  transform: scale(1.1);
+}
+
+.helpButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.helpButton:hover {
+  background-color: #5a32a3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .navTitle {
+    font-size: 1.2rem;
+  }
+  
+  .rightIcons {
+    display: none;
+  }
+}
